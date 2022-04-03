@@ -6,7 +6,7 @@ class Parser:
 
     def get_subject_list(self):
         data = requests.get('http://os.fipi.ru/api/dictionaries').json()
-        return '\n'.join([sub['name'] for sub in data['subjects'] if int(sub['id']) <= 22])
+        return '\n'.join(['--> ' + sub['name'] for sub in data['subjects'] if int(sub['id']) <= 22])
 
 
 if __name__ == '__main__':
